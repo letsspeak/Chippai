@@ -10,6 +10,8 @@
 
 @interface ChippaiAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMenu *statusMenu;
+@property (nonatomic, strong) NSStatusItem *statusBar;
+
 
 @end

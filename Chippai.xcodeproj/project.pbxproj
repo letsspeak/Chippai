@@ -13,6 +13,8 @@
 		66CF791817184A9600E7719E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791617184A9600E7719E /* Credits.rtf */; };
 		66CF791B17184A9600E7719E /* ChippaiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */; };
 		66CF791E17184A9600E7719E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791C17184A9600E7719E /* MainMenu.xib */; };
+		66CF792617184AF200E7719E /* NSString+GetParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF792517184AF200E7719E /* NSString+GetParameter.m */; };
+		66CF792A17184FB000E7719E /* Chippai.icns in Resources */ = {isa = PBXBuildFile; fileRef = 66CF792917184FB000E7719E /* Chippai.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		66CF791917184A9600E7719E /* ChippaiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChippaiAppDelegate.h; sourceTree = "<group>"; };
 		66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChippaiAppDelegate.m; sourceTree = "<group>"; };
 		66CF791D17184A9600E7719E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		66CF792417184AF200E7719E /* NSString+GetParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+GetParameter.h"; path = "../../StatusMenuApp/StatusMenuApp/Utilities/NSString+GetParameter/NSString+GetParameter.h"; sourceTree = "<group>"; };
+		66CF792517184AF200E7719E /* NSString+GetParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+GetParameter.m"; path = "../../StatusMenuApp/StatusMenuApp/Utilities/NSString+GetParameter/NSString+GetParameter.m"; sourceTree = "<group>"; };
+		66CF792917184FB000E7719E /* Chippai.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Chippai.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +51,7 @@
 		66CF78F817184A9600E7719E = {
 			isa = PBXGroup;
 			children = (
+				66CF792917184FB000E7719E /* Chippai.icns */,
 				66CF790D17184A9600E7719E /* Chippai */,
 				66CF790617184A9600E7719E /* Frameworks */,
 				66CF790417184A9600E7719E /* Products */,
@@ -82,6 +88,8 @@
 		66CF790D17184A9600E7719E /* Chippai */ = {
 			isa = PBXGroup;
 			children = (
+				66CF792417184AF200E7719E /* NSString+GetParameter.h */,
+				66CF792517184AF200E7719E /* NSString+GetParameter.m */,
 				66CF791917184A9600E7719E /* ChippaiAppDelegate.h */,
 				66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */,
 				66CF791C17184A9600E7719E /* MainMenu.xib */,
@@ -156,6 +164,7 @@
 				66CF791217184A9600E7719E /* InfoPlist.strings in Resources */,
 				66CF791817184A9600E7719E /* Credits.rtf in Resources */,
 				66CF791E17184A9600E7719E /* MainMenu.xib in Resources */,
+				66CF792A17184FB000E7719E /* Chippai.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +177,7 @@
 			files = (
 				66CF791417184A9600E7719E /* main.m in Sources */,
 				66CF791B17184A9600E7719E /* ChippaiAppDelegate.m in Sources */,
+				66CF792617184AF200E7719E /* NSString+GetParameter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

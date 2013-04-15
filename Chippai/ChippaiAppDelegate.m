@@ -35,7 +35,12 @@
 - (void)updateTitle
 {
   NSString *vlcTitle = [self getWindowTitleWithOwnerName:@"VLC"];
-  self.statusBar.title = vlcTitle;
+  
+  if (vlcTitle) {
+    self.statusBar.title = vlcTitle;
+  } else {
+    self.statusBar.title = @"(。ﾟωﾟ) ｡";
+  }
 }
 
 - (NSString*)getWindowTitleWithOwnerName:(NSString*)ownerName

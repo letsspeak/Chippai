@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66BE6665171C4079008F7000 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BE6664171C4079008F7000 /* Sparkle.framework */; };
+		66BE6668171C4131008F7000 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66BE6664171C4079008F7000 /* Sparkle.framework */; };
 		66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790717184A9600E7719E /* Cocoa.framework */; };
 		66CF791217184A9600E7719E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791017184A9600E7719E /* InfoPlist.strings */; };
 		66CF791417184A9600E7719E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791317184A9600E7719E /* main.m */; };
@@ -16,7 +18,21 @@
 		66CF792A17184FB000E7719E /* Chippai.icns in Resources */ = {isa = PBXBuildFile; fileRef = 66CF792917184FB000E7719E /* Chippai.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		66BE6667171C40FE008F7000 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				66BE6668171C4131008F7000 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		66BE6664171C4079008F7000 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		66CF790317184A9600E7719E /* Chippai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chippai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CF790717184A9600E7719E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		66CF790A17184A9600E7719E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -39,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */,
+				66BE6665171C4079008F7000 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +83,7 @@
 		66CF790617184A9600E7719E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66BE6664171C4079008F7000 /* Sparkle.framework */,
 				66CF790717184A9600E7719E /* Cocoa.framework */,
 				66CF790917184A9600E7719E /* Other Frameworks */,
 			);
@@ -115,6 +133,7 @@
 				66CF78FF17184A9600E7719E /* Sources */,
 				66CF790017184A9600E7719E /* Frameworks */,
 				66CF790117184A9600E7719E /* Resources */,
+				66BE6667171C40FE008F7000 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -262,6 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Chippai/Chippai-Prefix.pch";
 				INFOPLIST_FILE = "Chippai/Chippai-Info.plist";
@@ -274,6 +297,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Chippai/Chippai-Prefix.pch";
 				INFOPLIST_FILE = "Chippai/Chippai-Info.plist";

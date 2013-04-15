@@ -7,7 +7,6 @@
 //
 
 #import "ChippaiAppDelegate.h"
-#import "NSString+GetParameter.h"
 
 @implementation ChippaiAppDelegate
 

@@ -43,6 +43,20 @@
   }
 }
 
+- (IBAction)copyToPastaborad:(id)sender
+{
+  [[NSPasteboard generalPasteboard] clearContents];
+  [[NSPasteboard generalPasteboard] writeObjects:[NSArray arrayWithObject:self.statusBar.title]];
+}
+
+- (IBAction)google:(id)sender
+{
+  NSString *urlString = [NSString stringWithFormat:@"https://www.google.com/search?q=%@",
+                         [self.statusBar.title stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  NSURL *url = [NSURL URLWithString:urlString];
+  [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 - (NSString*)getWindowTitleWithOwnerName:(NSString*)ownerName
 {
   CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionAll, kCGNullWindowID);

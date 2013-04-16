@@ -26,7 +26,7 @@
 {
   [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
   
-  [NSTimer scheduledTimerWithTimeInterval:1.0f
+  [NSTimer scheduledTimerWithTimeInterval:0.05f
                                    target:self
                                  selector:@selector(updateTitle)
                                  userInfo:nil repeats:YES];
@@ -46,7 +46,7 @@
 - (NSString*)getWindowTitleWithOwnerName:(NSString*)ownerName
 {
   CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionAll, kCGNullWindowID);
-  NSArray *array = [(__bridge NSArray*)windowList mutableCopy];
+  NSArray *array = CFBridgingRelease(windowList);
   for (NSDictionary *dic in array) {
     NSString *windowOwnerName = [dic objectForKey:@"kCGWindowOwnerName"];
     BOOL isOnScreen = [[dic objectForKey:@"kCGWindowIsOnscreen"] boolValue];

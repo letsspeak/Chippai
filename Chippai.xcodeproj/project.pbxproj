@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6644CF59172183560056EB73 /* NSString+GetParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF58172183560056EB73 /* NSString+GetParameter.m */; };
+		6644CF6317218AFD0056EB73 /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF5F17218AFD0056EB73 /* HTTPResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6644CF6417218AFD0056EB73 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF6117218AFD0056EB73 /* HTTPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6644CF67172192800056EB73 /* ChippaiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF66172192800056EB73 /* ChippaiResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790717184A9600E7719E /* Cocoa.framework */; };
 		66CF791217184A9600E7719E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791017184A9600E7719E /* InfoPlist.strings */; };
 		66CF791417184A9600E7719E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791317184A9600E7719E /* main.m */; };
@@ -17,6 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6644CF57172183560056EB73 /* NSString+GetParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GetParameter.h"; sourceTree = "<group>"; };
+		6644CF58172183560056EB73 /* NSString+GetParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetParameter.m"; sourceTree = "<group>"; };
+		6644CF5E17218AFD0056EB73 /* HTTPResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseHandler.h; sourceTree = "<group>"; };
+		6644CF5F17218AFD0056EB73 /* HTTPResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseHandler.m; sourceTree = "<group>"; };
+		6644CF6017218AFD0056EB73 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		6644CF6117218AFD0056EB73 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		6644CF6217218AFD0056EB73 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		6644CF65172192800056EB73 /* ChippaiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChippaiResponse.h; sourceTree = "<group>"; };
+		6644CF66172192800056EB73 /* ChippaiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChippaiResponse.m; sourceTree = "<group>"; };
 		66CF790317184A9600E7719E /* Chippai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chippai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CF790717184A9600E7719E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		66CF790A17184A9600E7719E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -45,6 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6644CF55172183560056EB73 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6644CF56172183560056EB73 /* NSString+GetParameter */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6644CF56172183560056EB73 /* NSString+GetParameter */ = {
+			isa = PBXGroup;
+			children = (
+				6644CF57172183560056EB73 /* NSString+GetParameter.h */,
+				6644CF58172183560056EB73 /* NSString+GetParameter.m */,
+			);
+			path = "NSString+GetParameter";
+			sourceTree = "<group>";
+		};
 		66CF78F817184A9600E7719E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +115,14 @@
 		66CF790D17184A9600E7719E /* Chippai */ = {
 			isa = PBXGroup;
 			children = (
+				6644CF5E17218AFD0056EB73 /* HTTPResponseHandler.h */,
+				6644CF5F17218AFD0056EB73 /* HTTPResponseHandler.m */,
+				6644CF6017218AFD0056EB73 /* HTTPServer.h */,
+				6644CF6117218AFD0056EB73 /* HTTPServer.m */,
+				6644CF65172192800056EB73 /* ChippaiResponse.h */,
+				6644CF66172192800056EB73 /* ChippaiResponse.m */,
+				6644CF6217218AFD0056EB73 /* SynthesizeSingleton.h */,
+				6644CF55172183560056EB73 /* Utilities */,
 				66CF791917184A9600E7719E /* ChippaiAppDelegate.h */,
 				66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */,
 				66CF791C17184A9600E7719E /* MainMenu.xib */,
@@ -172,6 +210,10 @@
 			files = (
 				66CF791417184A9600E7719E /* main.m in Sources */,
 				66CF791B17184A9600E7719E /* ChippaiAppDelegate.m in Sources */,
+				6644CF59172183560056EB73 /* NSString+GetParameter.m in Sources */,
+				6644CF6317218AFD0056EB73 /* HTTPResponseHandler.m in Sources */,
+				6644CF6417218AFD0056EB73 /* HTTPServer.m in Sources */,
+				6644CF67172192800056EB73 /* ChippaiResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

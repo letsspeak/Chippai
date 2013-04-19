@@ -13,5 +13,6 @@
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, strong) NSStatusItem *statusBar;
 
+- (void)updateTitle:(NSString*)title;
 
 @end

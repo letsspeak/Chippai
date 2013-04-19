@@ -8,6 +8,9 @@
 
 #import "ChippaiAppDelegate.h"
 
+#import "HTTPServer.h"
+#import "ChippaiResponse.h"
+
 @implementation ChippaiAppDelegate
 
 @synthesize statusMenu;
@@ -26,10 +29,41 @@
 {
   [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
   
-  [NSTimer scheduledTimerWithTimeInterval:0.05f
-                                   target:self
-                                 selector:@selector(updateTitle)
-                                 userInfo:nil repeats:YES];
+  [self updateTitle];
+//  [NSTimer scheduledTimerWithTimeInterval:0.05f
+//                                   target:self
+//                                 selector:@selector(updateTitle)
+//                                 userInfo:nil repeats:YES];
+  
+  NSNumber *ownerPid = [self getOwnerPIDWithOwnerName:@"VLC"];
+  
+  NSRunningApplication *application = [NSRunningApplication runningApplicationWithProcessIdentifier:[ownerPid intValue]];
+  NSLog(@"application = %@", application);
+  
+//  NSLog(@"activeApplication = %@", [[NSWorkspace sharedWorkspace] activeApplication]);
+//
+//  NSArray *runningApplications = [[NSWorkspace sharedWorkspace] runningApplications];
+//  NSLog(@"runningApplications = %@", runningApplications);
+//  
+//  for (NSRunningApplication *application in runningApplications) {
+//    
+//    NSNumber *pid = [appInfo objectForKey:@"NSApplicationProcessIdentifier"];
+//    if ([ownerPid intValue] == [pid intValue]){
+//      
+//      NSLog(@"appInfo = %@", appInfo);
+//      
+//      break;
+//    }
+//    
+//  }
+  
+  [[HTTPServer sharedHTTPServer] start];
+  [ChippaiResponse load];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+  [[HTTPServer sharedHTTPServer] stop];
 }
 
 - (void)updateTitle
@@ -57,10 +91,27 @@
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
+- (NSNumber*)getOwnerPIDWithOwnerName:(NSString*)ownerName
+{
+  CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionAll, kCGNullWindowID);
+  NSArray *array = CFBridgingRelease(windowList);
+//  NSLog(@"array = %@", array);
+  for (NSDictionary *dic in array) {
+    NSString *windowOwnerName = [dic objectForKey:@"kCGWindowOwnerName"];
+    BOOL isOnScreen = [[dic objectForKey:@"kCGWindowIsOnscreen"] boolValue];
+    if ([windowOwnerName isEqualToString:ownerName]
+        && isOnScreen == YES){
+      return [dic objectForKey:@"kCGWindowOwnerPID"];
+    }
+  }
+  return nil;
+}
+
 - (NSString*)getWindowTitleWithOwnerName:(NSString*)ownerName
 {
   CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionAll, kCGNullWindowID);
   NSArray *array = CFBridgingRelease(windowList);
+  NSLog(@"array = %@", array);
   for (NSDictionary *dic in array) {
     NSString *windowOwnerName = [dic objectForKey:@"kCGWindowOwnerName"];
     BOOL isOnScreen = [[dic objectForKey:@"kCGWindowIsOnscreen"] boolValue];
@@ -71,5 +122,13 @@
   }
   return nil;
 }
+
+- (void)updateTitle:(NSString*)title
+{
+  self.statusBar.title = title;
+}
+
+
+
 
 @end

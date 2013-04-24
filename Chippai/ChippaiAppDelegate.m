@@ -11,10 +11,14 @@
 #import "HTTPServer.h"
 #import "ChippaiResponse.h"
 
+#import "SocketIOPacket.h"
+
+
 @implementation ChippaiAppDelegate
 
 @synthesize statusMenu;
 @synthesize statusBar = _statusBar;
+@synthesize socketIO;
 
 - (void)awakeFromNib
 {
@@ -29,7 +33,7 @@
 {
   [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
   
-  [self updateTitle];
+//  [self updateTitle];
 //  [NSTimer scheduledTimerWithTimeInterval:0.05f
 //                                   target:self
 //                                 selector:@selector(updateTitle)
@@ -57,9 +61,19 @@
 //    
 //  }
   
-  [[HTTPServer sharedHTTPServer] start];
-  [ChippaiResponse load];
+//  [[HTTPServer sharedHTTPServer] start];
+//  [ChippaiResponse load];
+  
+//  SRWebSocket *webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://153.135.43.113:58080"]]];
+////  SRWebSocket *webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://dev.charag.jp:18000"]]];
+//  [webSocket setDelegate:self];
+//  [webSocket open];
+  
+  self.socketIO = [[SocketIO alloc] initWithDelegate:self];
+  [self.socketIO connectToHost:@"153.135.43.113" onPort:58080];
 }
+
+
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
@@ -68,8 +82,9 @@
 
 - (void)updateTitle
 {
-  NSString *vlcTitle = [self getWindowTitleWithOwnerName:@"VLC"];
+//  NSString *vlcTitle = [self getWindowTitleWithOwnerName:@"VLC"];
   
+  NSString *vlcTitle = nil;
   if (vlcTitle) {
     self.statusBar.title = vlcTitle;
   } else {
@@ -128,6 +143,94 @@
   self.statusBar.title = title;
 }
 
+
+#pragma mark - SRWebSocketDelegate methods
+//
+//- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+//{
+//  NSLog(@"webSocket:didReceiveMessage called.");
+//  NSLog(@"message = %@", message);
+//}
+//
+//- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+//{
+//  NSLog(@"webSocketDidOpen called.");
+//  NSLog(@"webSocket = %@", webSocket);
+//}
+//
+//- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+//{
+//  NSLog(@"webSocket:didFailWithError called.");
+//  NSLog(@"webSocket = %@", webSocket);
+//  NSLog(@"error = %@", error);
+//}
+//
+//- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+//{
+//  NSLog(@"webSocket:didCloseWithCode:reason:wasClean called.");
+//  NSLog(@"webSocket = %@", webSocket);
+//  NSLog(@"code = %ld", code);
+//  NSLog(@"reason = %@", reason);
+//  NSLog(@"wasClean = %@", wasClean ? @"YES" : @"NO");
+//}
+
+#pragma mark - SocketIODelegate methods
+
+- (void) socketIODidConnect:(SocketIO *)socket
+{
+   NSLog(@"socketIODidConnect"); 
+}
+
+- (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error
+{
+  NSLog(@"socketIODidDisconnect:disconnectedWithError");
+  NSLog(@"error = %@", error);
+}
+
+- (void) socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet
+{
+  NSLog(@"socketIO:didReceiveMessage");
+  [packet dump];
+}
+
+- (void) socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet
+{
+  NSLog(@"socketIO:didReceiveJSON");
+  [packet dump];
+}
+
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
+{
+  NSLog(@"socketIO:didReceiveEvent");
+  [packet dump];
+  
+  
+  if ([packet.name isEqualToString:@"FromMpd"]) {
+    
+    if ([packet.args count] > 0) {
+      NSString *line = [packet.args objectAtIndex:0];
+      if ([line hasPrefix:@"OK MPD"]) {
+        [socket sendEvent:@"statusupdate" withData:@"statusupdate"];// currentsong"];
+      }
+    }
+  }
+  
+  if ([[packet name] isEqualToString:@"Status"]) {
+    [socket sendEvent:@"data" withData:@"statusupdate"];
+  }
+}
+
+- (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet
+{
+  NSLog(@"socketIO:didSendMessage");
+  [packet dump];
+}
+
+- (void) socketIO:(SocketIO *)socket onError:(NSError *)error
+{
+  NSLog(@"socketIO:onError");
+  NSLog(@"error = %@", error);
+}
 
 
 

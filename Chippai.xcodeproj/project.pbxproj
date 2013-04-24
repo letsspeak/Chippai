@@ -11,6 +11,18 @@
 		6644CF6317218AFD0056EB73 /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF5F17218AFD0056EB73 /* HTTPResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6644CF6417218AFD0056EB73 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF6117218AFD0056EB73 /* HTTPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6644CF67172192800056EB73 /* ChippaiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644CF66172192800056EB73 /* ChippaiResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6651BF7F172803DD0062FDF6 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF78172803DD0062FDF6 /* base64.c */; };
+		6651BF80172803DD0062FDF6 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF7B172803DD0062FDF6 /* NSData+SRB64Additions.m */; };
+		6651BF81172803DD0062FDF6 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF7E172803DD0062FDF6 /* SRWebSocket.m */; };
+		6651BF84172804050062FDF6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6651BF83172804050062FDF6 /* libicucore.dylib */; };
+		6651BF861728040C0062FDF6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6651BF851728040C0062FDF6 /* CFNetwork.framework */; };
+		6651BF88172804120062FDF6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6651BF87172804120062FDF6 /* Security.framework */; };
+		6651BF89172804180062FDF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790C17184A9600E7719E /* Foundation.framework */; };
+		6651BF9617280E1A0062FDF6 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF8C17280E1A0062FDF6 /* SocketIO.m */; };
+		6651BF9717280E1A0062FDF6 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF8E17280E1A0062FDF6 /* SocketIOJSONSerialization.m */; };
+		6651BF9817280E1A0062FDF6 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF9017280E1A0062FDF6 /* SocketIOPacket.m */; };
+		6651BF9917280E1A0062FDF6 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF9317280E1A0062FDF6 /* SocketIOTransportWebsocket.m */; };
+		6651BF9A17280E1A0062FDF6 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651BF9517280E1A0062FDF6 /* SocketIOTransportXHR.m */; };
 		66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790717184A9600E7719E /* Cocoa.framework */; };
 		66CF791217184A9600E7719E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791017184A9600E7719E /* InfoPlist.strings */; };
 		66CF791417184A9600E7719E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791317184A9600E7719E /* main.m */; };
@@ -30,6 +42,27 @@
 		6644CF6217218AFD0056EB73 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		6644CF65172192800056EB73 /* ChippaiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChippaiResponse.h; sourceTree = "<group>"; };
 		6644CF66172192800056EB73 /* ChippaiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChippaiResponse.m; sourceTree = "<group>"; };
+		6651BF78172803DD0062FDF6 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		6651BF79172803DD0062FDF6 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		6651BF7A172803DD0062FDF6 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		6651BF7B172803DD0062FDF6 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		6651BF7C172803DD0062FDF6 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		6651BF7D172803DD0062FDF6 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		6651BF7E172803DD0062FDF6 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		6651BF83172804050062FDF6 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		6651BF851728040C0062FDF6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6651BF87172804120062FDF6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6651BF8B17280E1A0062FDF6 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		6651BF8C17280E1A0062FDF6 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		6651BF8D17280E1A0062FDF6 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		6651BF8E17280E1A0062FDF6 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		6651BF8F17280E1A0062FDF6 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		6651BF9017280E1A0062FDF6 /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		6651BF9117280E1A0062FDF6 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		6651BF9217280E1A0062FDF6 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		6651BF9317280E1A0062FDF6 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		6651BF9417280E1A0062FDF6 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		6651BF9517280E1A0062FDF6 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
 		66CF790317184A9600E7719E /* Chippai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chippai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CF790717184A9600E7719E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		66CF790A17184A9600E7719E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -51,6 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6651BF89172804180062FDF6 /* Foundation.framework in Frameworks */,
+				6651BF88172804120062FDF6 /* Security.framework in Frameworks */,
+				6651BF861728040C0062FDF6 /* CFNetwork.framework in Frameworks */,
+				6651BF84172804050062FDF6 /* libicucore.dylib in Frameworks */,
 				66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +112,44 @@
 			path = "NSString+GetParameter";
 			sourceTree = "<group>";
 		};
+		6651BF77172803DD0062FDF6 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				6651BF78172803DD0062FDF6 /* base64.c */,
+				6651BF79172803DD0062FDF6 /* base64.h */,
+				6651BF7A172803DD0062FDF6 /* NSData+SRB64Additions.h */,
+				6651BF7B172803DD0062FDF6 /* NSData+SRB64Additions.m */,
+				6651BF7C172803DD0062FDF6 /* SocketRocket-Prefix.pch */,
+				6651BF7D172803DD0062FDF6 /* SRWebSocket.h */,
+				6651BF7E172803DD0062FDF6 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		6651BF8A17280E1A0062FDF6 /* Socket.IO-objc */ = {
+			isa = PBXGroup;
+			children = (
+				6651BF8B17280E1A0062FDF6 /* SocketIO.h */,
+				6651BF8C17280E1A0062FDF6 /* SocketIO.m */,
+				6651BF8D17280E1A0062FDF6 /* SocketIOJSONSerialization.h */,
+				6651BF8E17280E1A0062FDF6 /* SocketIOJSONSerialization.m */,
+				6651BF8F17280E1A0062FDF6 /* SocketIOPacket.h */,
+				6651BF9017280E1A0062FDF6 /* SocketIOPacket.m */,
+				6651BF9117280E1A0062FDF6 /* SocketIOTransport.h */,
+				6651BF9217280E1A0062FDF6 /* SocketIOTransportWebsocket.h */,
+				6651BF9317280E1A0062FDF6 /* SocketIOTransportWebsocket.m */,
+				6651BF9417280E1A0062FDF6 /* SocketIOTransportXHR.h */,
+				6651BF9517280E1A0062FDF6 /* SocketIOTransportXHR.m */,
+			);
+			path = "Socket.IO-objc";
+			sourceTree = SOURCE_ROOT;
+		};
 		66CF78F817184A9600E7719E = {
 			isa = PBXGroup;
 			children = (
+				6651BF87172804120062FDF6 /* Security.framework */,
+				6651BF851728040C0062FDF6 /* CFNetwork.framework */,
+				6651BF83172804050062FDF6 /* libicucore.dylib */,
 				66CF792917184FB000E7719E /* Chippai.icns */,
 				66CF790D17184A9600E7719E /* Chippai */,
 				66CF790617184A9600E7719E /* Frameworks */,
@@ -115,6 +187,8 @@
 		66CF790D17184A9600E7719E /* Chippai */ = {
 			isa = PBXGroup;
 			children = (
+				6651BF8A17280E1A0062FDF6 /* Socket.IO-objc */,
+				6651BF77172803DD0062FDF6 /* SocketRocket */,
 				6644CF5E17218AFD0056EB73 /* HTTPResponseHandler.h */,
 				6644CF5F17218AFD0056EB73 /* HTTPResponseHandler.m */,
 				6644CF6017218AFD0056EB73 /* HTTPServer.h */,
@@ -214,6 +288,14 @@
 				6644CF6317218AFD0056EB73 /* HTTPResponseHandler.m in Sources */,
 				6644CF6417218AFD0056EB73 /* HTTPServer.m in Sources */,
 				6644CF67172192800056EB73 /* ChippaiResponse.m in Sources */,
+				6651BF7F172803DD0062FDF6 /* base64.c in Sources */,
+				6651BF80172803DD0062FDF6 /* NSData+SRB64Additions.m in Sources */,
+				6651BF81172803DD0062FDF6 /* SRWebSocket.m in Sources */,
+				6651BF9617280E1A0062FDF6 /* SocketIO.m in Sources */,
+				6651BF9717280E1A0062FDF6 /* SocketIOJSONSerialization.m in Sources */,
+				6651BF9817280E1A0062FDF6 /* SocketIOPacket.m in Sources */,
+				6651BF9917280E1A0062FDF6 /* SocketIOTransportWebsocket.m in Sources */,
+				6651BF9A17280E1A0062FDF6 /* SocketIOTransportXHR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

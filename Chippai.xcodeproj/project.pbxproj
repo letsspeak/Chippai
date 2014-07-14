@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0A794B19740DB2000F0765 /* preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A794A19740DB2000F0765 /* preferences.xib */; };
+		1D0A794E19740E48000F0765 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A794D19740E48000F0765 /* PreferencesWindowController.m */; };
 		66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790717184A9600E7719E /* Cocoa.framework */; };
 		66CF791217184A9600E7719E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791017184A9600E7719E /* InfoPlist.strings */; };
 		66CF791417184A9600E7719E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791317184A9600E7719E /* main.m */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0A794A19740DB2000F0765 /* preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preferences.xib; sourceTree = "<group>"; };
+		1D0A794C19740E48000F0765 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		1D0A794D19740E48000F0765 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		66CF790317184A9600E7719E /* Chippai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chippai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CF790717184A9600E7719E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		66CF790A17184A9600E7719E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -89,6 +94,9 @@
 				66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */,
 				66CF791C17184A9600E7719E /* MainMenu.xib */,
 				66CF790E17184A9600E7719E /* Supporting Files */,
+				1D0A794A19740DB2000F0765 /* preferences.xib */,
+				1D0A794C19740E48000F0765 /* PreferencesWindowController.h */,
+				1D0A794D19740E48000F0765 /* PreferencesWindowController.m */,
 			);
 			path = Chippai;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 				66CF791217184A9600E7719E /* InfoPlist.strings in Resources */,
 				66CF791817184A9600E7719E /* Credits.rtf in Resources */,
 				66CF791E17184A9600E7719E /* MainMenu.xib in Resources */,
+				1D0A794B19740DB2000F0765 /* preferences.xib in Resources */,
 				66CF792A17184FB000E7719E /* Chippai.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66CF791417184A9600E7719E /* main.m in Sources */,
+				1D0A794E19740E48000F0765 /* PreferencesWindowController.m in Sources */,
 				66CF791B17184A9600E7719E /* ChippaiAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

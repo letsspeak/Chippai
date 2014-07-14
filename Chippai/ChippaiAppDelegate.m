@@ -7,6 +7,11 @@
 //
 
 #import "ChippaiAppDelegate.h"
+#import "PreferencesWindowController.h"
+
+@interface ChippaiAppDelegate ()
+@property (nonatomic, strong) PreferencesWindowController *preferences;
+@end
 
 @implementation ChippaiAppDelegate
 
@@ -26,7 +31,7 @@
 {
   [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
   
-  [NSTimer scheduledTimerWithTimeInterval:0.05f
+  [NSTimer scheduledTimerWithTimeInterval:1.0f
                                    target:self
                                  selector:@selector(updateTitle)
                                  userInfo:nil repeats:YES];
@@ -34,6 +39,7 @@
 
 - (void)updateTitle
 {
+  NSLog(@"updateTitle");
   NSString *vlcTitle = [self getWindowTitleWithOwnerName:@"VLC"];
   
   if (vlcTitle) {
@@ -55,6 +61,14 @@
                          [self.statusBar.title stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
   NSURL *url = [NSURL URLWithString:urlString];
   [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (IBAction)preferences:(id)sender
+{
+  NSLog(@"preferences");
+  PreferencesWindowController *controller = [[PreferencesWindowController alloc] initWithWindowNibName:@"preferences"];
+  self.preferences = controller;
+  [controller showWindow:self];
 }
 
 - (NSString*)getWindowTitleWithOwnerName:(NSString*)ownerName

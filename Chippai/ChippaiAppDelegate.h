@@ -20,4 +20,6 @@
 @property (nonatomic, readwrite) CGFloat width;
 @property (nonatomic, readwrite) int scrollSpeed;
 
+- (NSString*)string;
+
 @end

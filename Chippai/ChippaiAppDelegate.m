@@ -60,11 +60,7 @@
 
 - (void)drawStatusBar
 {
-  NSString *string = self.title;
-  if (self.artist) {
-    string = [NSString stringWithFormat:@"%@ - %@", self.title, self.artist];
-  }
-  
+  NSString *string = self.string;
   static int scrollCount = 0;
   scrollCount++;
   if ((self.scrollSpeed == 1 && scrollCount > 5)
@@ -113,13 +109,13 @@
 - (IBAction)copyToPastaborad:(id)sender
 {
   [[NSPasteboard generalPasteboard] clearContents];
-  [[NSPasteboard generalPasteboard] writeObjects:[NSArray arrayWithObject:self.statusBar.title]];
+  [[NSPasteboard generalPasteboard] writeObjects:[NSArray arrayWithObject:self.string]];
 }
 
 - (IBAction)google:(id)sender
 {
   NSString *urlString = [NSString stringWithFormat:@"https://www.google.com/search?q=%@",
-                         [self.statusBar.title stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                         [self.string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
   NSURL *url = [NSURL URLWithString:urlString];
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
@@ -146,6 +142,15 @@
     }
   }
   return nil;
+}
+
+- (NSString*)string
+{
+  NSString *string = self.title;
+  if (self.artist) {
+    string = [NSString stringWithFormat:@"%@ - %@", self.title, self.artist];
+  }
+  return string;
 }
 
 @end

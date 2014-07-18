@@ -8,9 +8,14 @@
 
 #import "ChippaiAppDelegate.h"
 #import "PreferencesWindowController.h"
+#import "iTunes.h"
+#import <QuartzCore/QuartzCore.h>
+#import "InfoView.h"
 
 @interface ChippaiAppDelegate ()
 @property (nonatomic, strong) PreferencesWindowController *preferences;
+@property (nonatomic, strong) iTunesApplication *iTunesApp;
+@property (nonatomic, strong) InfoView *infoView;
 @end
 
 @implementation ChippaiAppDelegate
@@ -31,15 +36,71 @@
 {
   [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
   
+  self.width = 200;
+  self.scrollSpeed = 2;
+  self.iTunesApp = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+
+  
   [NSTimer scheduledTimerWithTimeInterval:1.0f
                                    target:self
-                                 selector:@selector(updateTitle)
+                                 selector:@selector(loadMusicInfo)
+                                 userInfo:nil repeats:YES];
+
+  [NSTimer scheduledTimerWithTimeInterval:0.1f
+                                   target:self
+                                 selector:@selector(drawStatusBar)
                                  userInfo:nil repeats:YES];
 }
 
-- (void)updateTitle
+- (void)loadMusicInfo
 {
-  NSLog(@"updateTitle");
+  self.title = [self.iTunesApp.currentTrack name];
+  self.artist = [self.iTunesApp.currentTrack artist];
+}
+
+- (void)drawStatusBar
+{
+  NSString *string = self.title;
+  if (self.artist) {
+    string = [NSString stringWithFormat:@"%@ - %@", self.title, self.artist];
+  }
+  
+  static int scrollCount = 0;
+  scrollCount++;
+  if ((self.scrollSpeed == 1 && scrollCount > 5)
+      || (self.scrollSpeed == 2 && scrollCount > 3)
+      || self.scrollSpeed == 3) {
+    
+    static NSInteger pos = 0;
+    NSInteger length = [string length];
+    string = [string stringByAppendingString:string];
+    string = [string substringWithRange:NSMakeRange(pos, length)];
+    if (++pos >= length) pos = 0;
+    
+    scrollCount = 0;
+  } else if (self.scrollSpeed > 0){
+    return;
+  }
+  
+  NSFont *font = [NSFont systemFontOfSize:13.0f];
+  NSString *trimmedString = [self trimString:string font:font width:self.width];
+  self.statusBar.title = trimmedString;
+  self.statusBar.toolTip = string;
+}
+
+- (NSString*)trimString:(NSString*)string font:(NSFont*)font width:(CGFloat)width
+{
+  NSDictionary *attributes = @{NSFontAttributeName:font};
+  NSInteger index = [string length];
+  while ([[string substringToIndex:index] sizeWithAttributes:attributes].width > width) {
+    index--;
+    if (index < 0) return @"";
+  }
+  return [string substringToIndex:index];
+}
+
+- (void)updateVLCTitle
+{
   NSString *vlcTitle = [self getWindowTitleWithOwnerName:@"VLC"];
   
   if (vlcTitle) {
@@ -67,6 +128,7 @@
 {
   NSLog(@"preferences");
   PreferencesWindowController *controller = [[PreferencesWindowController alloc] initWithWindowNibName:@"preferences"];
+  controller.delegate = self;
   self.preferences = controller;
   [controller showWindow:self];
 }

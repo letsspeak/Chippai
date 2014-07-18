@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController">
             <connections>
+                <outlet property="scrollSpeedSlider" destination="YmI-OG-Ygb" id="x3O-bs-1Tp"/>
+                <outlet property="widthSlider" destination="ZUs-J1-hRC" id="2qN-f9-8eJ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="A2Q-kw-dTs"/>
             </connections>
         </customObject>
@@ -15,21 +17,22 @@
         <window title="Chippai Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="417" height="63"/>
+            <rect key="contentRect" x="196" y="240" width="417" height="145"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="417" height="63"/>
+                <rect key="frame" x="0.0" y="0.0" width="417" height="145"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-Py-j96">
-                        <rect key="frame" x="72" y="19" width="319" height="26"/>
+                        <rect key="frame" x="72" y="101" width="319" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="fk3-tu-QDm">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="R4V-QU-LAL">
                                 <items>
-                                    <menuItem title="Nsen ch01 VOCALOID" id="lpR-ZJ-x7h"/>
+                                    <menuItem title="iTunes" id="lpR-ZJ-x7h"/>
+                                    <menuItem title="Nsen ch01 VOCALOID" id="noK-nc-F3I"/>
                                     <menuItem title="Nsen ch02 東方" id="HpL-bD-RSd"/>
                                     <menuItem title="Nsen ch03 ニコニコインディーズ" id="2na-Co-1Y0"/>
                                     <menuItem title="Nsen ch04 歌ってみた" id="8vh-1B-oDg"/>
@@ -43,7 +46,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLD-M8-JSo">
-                        <rect key="frame" x="18" y="24" width="56" height="17"/>
+                        <rect key="frame" x="18" y="106" width="56" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ソース：" id="ThJ-VX-HB3">
                             <font key="font" size="13" name="AquaKana"/>
@@ -51,6 +54,34 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-7t-4Dw">
+                        <rect key="frame" x="18" y="65" width="108" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="スクロール速度：" id="sBK-m2-Aqr">
+                            <font key="font" size="13" name="AquaKana"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrG-W1-w0r">
+                        <rect key="frame" x="18" y="24" width="30" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="幅：" id="OAT-h6-92K">
+                            <font key="font" size="13" name="AquaKana"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YmI-OG-Ygb">
+                        <rect key="frame" x="130" y="57" width="269" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="3" doubleValue="2" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="sQQ-2m-Q2I"/>
+                    </slider>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUs-J1-hRC">
+                        <rect key="frame" x="56" y="18" width="351" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="500" doubleValue="300" tickMarkPosition="below" numberOfTickMarks="6" sliderType="linear" id="40P-x8-OWv"/>
+                    </slider>
                 </subviews>
             </view>
         </window>

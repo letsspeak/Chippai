@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1D0A794B19740DB2000F0765 /* preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A794A19740DB2000F0765 /* preferences.xib */; };
 		1D0A794E19740E48000F0765 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A794D19740E48000F0765 /* PreferencesWindowController.m */; };
+		1DD778391978FD5E001FF318 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD778381978FD5E001FF318 /* ScriptingBridge.framework */; };
+		1DD77896197905FC001FF318 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD77895197905FC001FF318 /* QuartzCore.framework */; };
+		1DD7789C19790A6B001FF318 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7789B19790A6B001FF318 /* InfoView.m */; };
 		66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF790717184A9600E7719E /* Cocoa.framework */; };
 		66CF791217184A9600E7719E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66CF791017184A9600E7719E /* InfoPlist.strings */; };
 		66CF791417184A9600E7719E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CF791317184A9600E7719E /* main.m */; };
@@ -22,6 +25,11 @@
 		1D0A794A19740DB2000F0765 /* preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preferences.xib; sourceTree = "<group>"; };
 		1D0A794C19740E48000F0765 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		1D0A794D19740E48000F0765 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		1DD778371978FB89001FF318 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		1DD778381978FD5E001FF318 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		1DD77895197905FC001FF318 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1DD7789A19790A6B001FF318 /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
+		1DD7789B19790A6B001FF318 /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
 		66CF790317184A9600E7719E /* Chippai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chippai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CF790717184A9600E7719E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		66CF790A17184A9600E7719E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD77896197905FC001FF318 /* QuartzCore.framework in Frameworks */,
+				1DD778391978FD5E001FF318 /* ScriptingBridge.framework in Frameworks */,
 				66CF790817184A9600E7719E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +81,8 @@
 		66CF790617184A9600E7719E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DD77895197905FC001FF318 /* QuartzCore.framework */,
+				1DD778381978FD5E001FF318 /* ScriptingBridge.framework */,
 				66CF790717184A9600E7719E /* Cocoa.framework */,
 				66CF790917184A9600E7719E /* Other Frameworks */,
 			);
@@ -90,6 +102,7 @@
 		66CF790D17184A9600E7719E /* Chippai */ = {
 			isa = PBXGroup;
 			children = (
+				1DD778371978FB89001FF318 /* iTunes.h */,
 				66CF791917184A9600E7719E /* ChippaiAppDelegate.h */,
 				66CF791A17184A9600E7719E /* ChippaiAppDelegate.m */,
 				66CF791C17184A9600E7719E /* MainMenu.xib */,
@@ -97,6 +110,8 @@
 				1D0A794A19740DB2000F0765 /* preferences.xib */,
 				1D0A794C19740E48000F0765 /* PreferencesWindowController.h */,
 				1D0A794D19740E48000F0765 /* PreferencesWindowController.m */,
+				1DD7789A19790A6B001FF318 /* InfoView.h */,
+				1DD7789B19790A6B001FF318 /* InfoView.m */,
 			);
 			path = Chippai;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD7789C19790A6B001FF318 /* InfoView.m in Sources */,
 				66CF791417184A9600E7719E /* main.m in Sources */,
 				1D0A794E19740E48000F0765 /* PreferencesWindowController.m in Sources */,
 				66CF791B17184A9600E7719E /* ChippaiAppDelegate.m in Sources */,

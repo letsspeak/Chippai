@@ -13,5 +13,11 @@
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, strong) NSStatusItem *statusBar;
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *artist;
+
+// preferences
+@property (nonatomic, readwrite) CGFloat width;
+@property (nonatomic, readwrite) int scrollSpeed;
 
 @end
